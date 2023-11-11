@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo-web.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="head">
+        <nav class="nav-bar">
+            <a href="index.html" class="logo"><img src="logo.png"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="question">
+        <div class="question">
+            <h1>Frequently Asked Questions</h1>
+        <details>
+          <summary>What is <em>the role of HTML, CSS, and JavaScript in frontend web development</em>?</summary>
+          <div class="content">
+            <p><b>•</b> HTML (Hypertext Markup Language) is used for structuring the content and defining the elements on a web page. CSS (Cascading Style Sheets) is responsible for styling and layout, controlling the visual presentation of HTML elements. JavaScript, on the other hand, is a programming language that adds interactivity and dynamic behavior to web pages, allowing for tasks like form validation, animations, and real-time updates.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What is <em>main purpose of a backend in web development</em>?</summary>
+          <div class="content">
+            <p><b>•</b> The backend of a web application handles the server-side logic and data processing. It manages tasks such as database interactions, user authentication, business logic, and handling requests from the frontend. It ensures that data is securely stored, processed, and delivered to the frontend as needed.</p>
+          </div>
+        </details>
+        <details>
+            <summary>What are <em>responsive web design and why is it important</em>?</summary>
+            <div class="content">
+              <p><b>•</b> Responsive web design is an approach that focuses on creating websites that adapt and display properly across various devices and screen sizes, such as desktops, tablets, and smartphones. It involves using flexible layouts, CSS media queries, and scalable images to provide an optimal viewing experience. This is important because it ensures that users can access and navigate the website effectively, regardless of the device they're using.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Explaine the <em>difference between SQL and NoSQL databases</em>?</summary>
+            <div class="content">
+              <p><b>•</b> SQL (Structured Query Language) databases are relational databases that store data in structured tables with predefined schemas. They are good for handling structured data and support complex queries and transactions. NoSQL databases, on the other hand, are non-relational databases that store data in flexible formats like key-value pairs, documents, graphs, or columns. They are suitable for handling unstructured or semi-structured data and can scale horizontally to accommodate large amounts of data and high traffic.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What is <em>a Single Page Application (SPA) and how does it work</em>?</summary>
+            <div class="content">
+              <p><b>•</b> A Single Page Application (SPA) is a type of web application that loads and interacts with all necessary resources on a single web page, dynamically updating content as the user interacts with the application. SPAs use JavaScript frameworks like React, Angular, or Vue.js to handle routing and rendering without requiring full page reloads. This results in a smoother user experience and better performance since only the relevant parts of the page are updated, reducing the need to fetch new resources from the server.</p>
+            </div>
+          </details>
+        </div>
+        </div>
+      </section>
+
+      <section id="footer">
+        <div class="footer">
+            <div class="footer-text">
+                <h2 data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="900">Get in Touch</h2>
+                <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="gmail">johnmarkdepaclayon10@gmail.com</p>
+                <p data-aos="fade-up" data-aos-delay="20" data-aos-duration="900"><a href="privacy.html">Privacy Policy</a></p>
+                <div class="row">
+                    <a href="https://www.facebook.com/depaclayon.jm?mibextid=ZbWKwL"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://github.com/XKeisukeX"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                </div>
+            </div>
+        </div>
+      </section>
+      
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        const withAnimation = true;
+    const duration = 100; 
+    const easing = "ease-in";
+
+    class Accordion {
+
+    constructor(el) {
+        this.el = el;
+        this.summary = el.querySelector("summary");
+        this.content = el.querySelector("summary + *");
+
+        this.animation = null;
+        this.isClosing = false;
+        this.isExpanding = false;
+        this.summary.addEventListener("click", (e) => this.onClick(e));
+    }
+
+    onClick(e) {
+        e.preventDefault();
+        this.el.style.overflow = "hidden";
+        if (this.isClosing || !this.el.open) {
+        this.open();
+        } else if (this.isExpanding || this.el.open) {
+        this.shrink();
+        }
+    }
+
+    shrink() {
+        this.isClosing = true;
+
+        const startHeight = `${this.el.offsetHeight}px`;
+        const endHeight = `${this.summary.offsetHeight}px`;
+
+        if (this.animation) {
+        this.animation.cancel();
+        }
+
+        this.animation = this.el.animate(
+        {
+            height: [startHeight, endHeight]
+        },
+        {
+            duration,
+            easing
+        }
+        );
+
+        this.animation.onfinish = () => this.onAnimationFinish(false);
+        this.animation.oncancel = () => (this.isClosing = false);
+    }
+
+    open() {
+        this.el.style.height = `${this.el.offsetHeight}px`;
+        this.el.open = true;
+        window.requestAnimationFrame(() => this.expand());
+    }
+
+    expand() {
+        this.isExpanding = true;
+        const startHeight = `${this.el.offsetHeight}px`;
+        const endHeight = `${
+        this.summary.offsetHeight + this.content.offsetHeight
+        }px`;
+
+        if (this.animation) {
+        this.animation.cancel();
+        }
+
+        this.animation = this.el.animate(
+        {
+            height: [startHeight, endHeight]
+        },
+        {
+            duration,
+            easing
+        }
+        );
+        this.animation.onfinish = () => this.onAnimationFinish(true);
+        this.animation.oncancel = () => (this.isExpanding = false);
+    }
+
+    onAnimationFinish(open) {
+        this.el.open = open;
+        this.animation = null;
+        this.isClosing = false;
+        this.isExpanding = false;
+        this.el.style.height = this.el.style.overflow = "";
+    }
+    }
+
+    if (withAnimation) {
+    document.querySelectorAll("details").forEach((el) => {
+        new Accordion(el);
+    });
+    }
+
+    const navMenu = document.querySelector('.nav-menu')
+        const hamburger = document.querySelector('.hamburger')
+
+        hamburger.addEventListener('click', mobileMenu);
+
+        function mobileMenu() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+    }
+
+    AOS.init();
+      </script>
+</body>
+</html>

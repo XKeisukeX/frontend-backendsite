@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+	*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.main{
+	width: 500px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+#signUp, #login {
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+#signUp, #login:hover{
+	background: #6d44b8;
+}
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+} 
+
+
+
+
+.title-text{
+    text-align: center;
+    width: 90%;
+    margin: 90px auto;
+    margin-top: 3em;
+}
+.text h1{
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    line-height: 1em;
+}
+.text p{
+    color: #fff;
+    font-size: 1rem;
+    width: 60%;
+    margin: auto;
+    letter-spacing: 1px;
+    line-height: 1.4em;
+}
+.box{
+    margin-top: 3em;
+}
+.box h3{
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 0.7em;
+}
+.serviceBox{
+    color: #666;
+    background: linear-gradient(to right,#f1c40f 49%,#f39c12 50%);
+    text-align: center;
+    padding: 2px 10px 12px;
+    border-radius: 150px 0 50px 50px;
+    transition: all 0.3s ease 0s;
+    max-width: 600px;
+    margin: auto;
+}
+.serviceBox .service-content{
+    background: linear-gradient(to top left, #fff,#fff,rgba(255,255,255,0.8));
+    padding: 20px 13px;
+    border-radius: 0 130px 50px 50px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+}
+.serviceBox .description{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+.serviceBox.green{ background: linear-gradient(to right,#666362 49%,#353839 50%); }
+.serviceBox.green .service-icon{ color: #01acb3; }
+.serviceBox.green:hover .service-icon i,
+.serviceBox.green .title{
+    color: #007687;
+}
+@media only screen and (max-width:990px){
+    .serviceBox{ margin: 0 0 30px; }
+}
+.serviceBox .service-icon{
+    color: #f1c40f;
+    font-size: 40px;
+    margin: 0 0 10px 0;
+}
+.serviceBox:hover .service-icon i{
+    color: #da8219;
+    transform: rotateY(360deg);
+    transition: all 0.3s;
+}
+
+.generate{
+    margin-top: 2em;
+}
+button {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 10px 15px;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  
+  button svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  button:hover svg {
+    transform: translateX(5px) rotate(90deg);
+  }
+  
+  button:hover span {
+    transform: translateX(7px);
+  }
+
+  @media only screen and (max-width:603px){
+    .text h1{
+        font-size: 2.5rem;
+    }
+    .text p{
+        font-size: 0.9rem;
+    }
+    .box h3{
+        font-size: 1.7rem;
+    }
+  }
+  @media only screen and (max-width:1000px){
+    .text p{
+        width: 90%;
+    }
+    .title-text{
+        margin-top: 2.5em;
+    }
+  }
+  @media only screen and (max-width:511px){
+    .text h1{
+        font-size: 2.5rem;
+    }
+    .text p{
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    .box h3{
+        font-size: 1.5rem;
+    }
+    .serviceBox .description{
+        font-size: 1.1rem;
+    }
+    .title-text{
+        margin-top: 3em;
+    }
+  }
+
+  #title-el {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  #title-el.show {
+    opacity: 1;
+  }
+
+#logged-in-view{
+	display: none;
+}
+</style>
+<body>
+	<section id="logged-out-view">
+	 <div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+		    <div class="signup">
+				<label for="chk" aria-hidden="true">Sign up</label>
+			    <input type="text" id="username" name="username" placeholder="username" required/> 
+				<input type="text" id="email" name="email" placeholder="email" required/>
+				<input type="password" id="password" name="password" placeholder="password" required/>
+            
+                <input type="submit" id="signUp" name="signup_submit" value="Sign up" />  
+                <input type="submit" id="login" name="login" value="Login" /> 
+			</div>
+
+			<!-- <div class="login">
+				<label for="chk" aria-hidden="true">Login</label>
+				<input type="text" id="email" name="email" placeholder="email" required/>
+				<input type="password" id="password" name="password" placeholder="password" required/>
+
+                <input type="submit" id="login" name="login" value="Login" /> 
+			</div>  -->
+      
+	</div> 
+   
+</section>
+
+	<section id="logged-in-view">
+	<div class="title-text">
+		<div class="text">
+		 <h1>Thesis Title Generator</h1>
+		 <p>Looking for a thesis title generator? Try this tool! It can make a Thesis title topic for your proposal or any other project. 100% free, no registration required.</p>
+		</div>
+		
+		<div class="box">
+		<div class="col-md-3 col-sm-6">
+		 <div class="serviceBox green">
+			 <div class="service-content">
+				 <div class="service-icon">
+					 <span><i class="fa fa-cogs"></i></span>
+				 </div>
+				 <h3 class="title">THESIS TITLE</h3>
+				 <p class="description" id="title-el"></p>
+				 <div class="generate">
+					 <button onclick="generate()">
+						 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></svg>
+						 <span>Generate</span>
+					   </button>
+				  </div>
+			   </div>
+			</div>
+		 </div>
+	  </div>
+	</div>
+ </div>
+	 </div>
+		<button id="signOutView">
+			<small><b>SIGNOUT</b></small>
+		</button>
+	 </section>
+	 <script>
+        let choose = ["Computer-Aided Instruction with Voice Recognition system", "Holistic Computerized Faculty Evaluation System", "Book Catalog Application using Android", "Hotel Reservation Application with Mobile Compatibility in Android", "SMS-Based Grade Inquiry System", "Mobile Voting System using Android", "Grade Viewer Application in Android", "SSG Management System with SMS Notification", "Payroll System with Biometric and Barcode Technology", "School Event Attendance Monitoring System with Biometric and Barcode Technology", "Face Recognition System", "Motorcycle Tracking with GPS using Android", "Mobile Educational Application for Elementary Student using Android", "Class Time Table in Android", "Online Grade Inquiry", "Online Grading System", "Airline Reservation System", "Video Library Management System", "Internet Cafe System", "Billing System", "Human Resource Management System", "Online billing system", "Online class scheduling system", "Online class scheduling system", "Online ordering system", "Online bidding system", "Voting system", "Online voting system", "Online shopping cart", "Medical records system", "Client server based guidance system", "Hotel reservation system", "Hotel management system", "Library system", "Record management system", "Supply inventory system", "E-learning system", "Hospital system", "Online Lot Reservation", "Online Product Reservation System", "Android-Based Class Attendance Monitoring Application using Barcode", "Group Messenger Application using Android", "Medicine Inventory and Patient Information system",]
+        let titleEl = document.getElementById("title-el")
+
+        function generate() {
+            let randomTitle = Math.floor(Math.random() * choose.length);
+            titleEl.textContent = choose[randomTitle];
+            titleEl.classList.add("show");
+         }
+	 </script>
+
+</body>
+
+<script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+      import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+  
+     const firebaseConfig = {
+       apiKey: "AIzaSyBQ3itlIzR4ydobPvNWnve9zLP3AfZsISU",
+       authDomain: "frontbackend-61899.firebaseapp.com",
+        databaseURL: "https://frontbackend-61899-default-rtdb.firebaseio.com",
+	   storageBucket: "frontbackend-61899.appspot.com",
+       messagingSenderId: "208213583672",
+       appId: "1:208213583672:web:742bc24aa5bcf330c203cd"
+     };
+  
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+	 const viewLoggedOut = document.getElementById("logged-out-view")
+    const viewLoggedIn = document.getElementById("logged-in-view")
+
+    signUp.addEventListener('click',(e) => {
+
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var username = document.getElementById("username").value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+             const user = userCredential.user;
+
+	 		set(ref(database, 'user/' + user.uid),{
+	 			username: username,
+	 			email: email,
+                password: password
+	 		})
+
+            alert("Successful!");
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            
+            alert(errorMessage);
+        });
+        
+    })
+
+	 login.addEventListener('click',(e) => {
+
+	 	var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+	 	signInWithEmailAndPassword(auth, email, password)
+	 	.then((userCredential) => {
+	 		 const user = userCredential.user;
+
+	 		const dt = new Date();
+	 		update(ref(database, 'user/' + user.uid),{
+	 			last_login: dt,
+	 		})
+
+	 		clearAuthFields();
+	 		showLoggedInView();
+
+	 	})
+	 	.catch((error) => {
+	 		const errorCode = error.code;
+	 		const errorMessage = error.message;
+
+	 		alert(errorMessage);
+	 	});
+
+	 })
+
+     signOutView.addEventListener('click',(e) => {
+
+        var signout = document.getElementById("signOutView").value
+
+        signOut(auth).then(() => {
+
+            showLoggedOutView();
+
+        }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+        });
+
+        })
+
+
+
+
+
+	 function showLoggedOutView() {
+    hideView(viewLoggedIn)
+    showView(viewLoggedOut)
+    }
+
+    function showLoggedInView() {
+        hideView(viewLoggedOut)
+        showView(viewLoggedIn)
+    }
+
+    function showView(view) {
+        view.style.display = "block"
+    }
+
+    function hideView(view) {
+        view.style.display = "none"
+    }
+
+	 function clearInputField(field) {
+	     field.value = ""
+    }
+
+    function clearAuthFields() {
+        clearInputField(email)
+        clearInputField(password)
+    }
+
+  </script>
+
+</html>

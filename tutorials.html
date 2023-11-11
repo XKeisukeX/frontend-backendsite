@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo-web.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="head">
+        <nav class="nav-bar">
+          <a href="index.html" class="logo"><img src="logo.png"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="turorials">
+        <div class="tutorials">
+            <div class="tutorial-text">
+              <h2 data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">Tutorials About Frontend & Backend</h2>
+            </div>
+            <div class="f-video">
+                <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">Frontend:</h2>
+            </div>
+            <div class="tutorial-video">
+                <iframe data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="900" class="responsive-iframe"  src="https://www.youtube.com/embed/71VNb8LzciE" frameborder="0" allowfullscreen></iframe>
+                <iframe data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="900" class="responsive-iframe"  src="https://www.youtube.com/embed/nu_pCVPKzTk" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="links">
+                <ul class="link-web">
+                    <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="link">
+                        <a href="https://scrimba.com/">Scrimba</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="link">
+                        <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="link">
+                        <a  href="https://www.codecademy.com/">CodeAcademy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="horizontal-line"></div>
+            <div class="b-video">
+                <h2 data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">Backend:</h2>
+            </div>
+            <div class="tutorial-video">
+                <iframe data-aos="fade-up" data-aos-delay="300" data-aos-duration="900" class="responsive-iframe"  src="https://www.youtube.com/embed/w_L5XMp44tc" frameborder="0" allowfullscreen></iframe>
+                <iframe data-aos="fade-up" data-aos-delay="400" data-aos-duration="900" class="responsive-iframe"  src="https://www.youtube.com/embed/d2Z40twFohc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="links">
+                <ul class="link-web">
+                    <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="link">
+                        <a href="https://scrimba.com/">Scrimba</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="link">
+                        <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="link">
+                        <a href="https://www.codecademy.com/">CodeAcademy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="footer">
+            <div class="footer-text">
+                <h2 data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="900">Get in Touch</h2>
+                <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="gmail">johnmarkdepaclayon10@gmail.com</p>
+                <p data-aos="fade-up" data-aos-delay="20" data-aos-duration="900"><a href="privacy.html">Privacy Policy</a></p>
+                <div class="row">
+                    <a href="https://www.facebook.com/depaclayon.jm?mibextid=ZbWKwL"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://github.com/XKeisukeX"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const navMenu = document.querySelector('.nav-menu')
+        const hamburger = document.querySelector('.hamburger')
+
+        hamburger.addEventListener('click', mobileMenu);
+
+        function mobileMenu() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+    }
+
+    AOS.init();
+      </script>
+</body>
+</html>

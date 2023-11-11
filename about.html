@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo-web.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="head">
+        <nav class="nav-bar">
+          <a href="index.html" class="logo"><img src="logo.png"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faqs.html" class="nav-link">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="about">
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="about-text">
+                <h2 class="about-h2">Our Expertise in Frontend and Backend Development</h2>
+                <p>- A comprehensive overview of your team's skills and experience in both frontend and backend development. Highlight the technologies, languages, and frameworks your team is proficient in.</p>
+                <h2>Bridging the Gap Between Frontend and Backend</h2>
+                <p>- Explore how your team effectively integrates frontend and backend development to create seamless, user-friendly, and efficient web applications. Discuss the collaboration and communication strategies used.</p>
+                <h2>Crafting Engaging User Experiences (UX) through Frontend Development</h2>
+                <p>- Detail the significance of frontend development in creating visually appealing and user-centric interfaces. Explain how your team prioritizes UX principles to enhance customer satisfaction.</p>
+                <h2>The Engine Behind the Scenes: Backend Development Unveiled</h2>
+                <p>- Shed light on the backend development process that powers your web applications. Discuss server management, database design, APIs, security measures, and scalability considerations.</p>
+                <h2>The Technology Stack Driving Our Web Applications</h2>
+                <p>- Provide insight into the frontend and backend technologies your team relies on. Explain the reasoning behind the selection of specific languages, frameworks, libraries, and tools.</p>
+                <h2>Responsive Frontend Design for All Devices</h2>
+                <p>- Discuss the importance of responsive design in frontend development. Showcase how your team ensures optimal user experiences across various devices, screen sizes, and orientations.</p>
+                <h2>Optimizing Performance: Balancing Frontend and Backend Considerations</h2>
+                <p>- Explore the challenges and solutions for achieving high performance in web applications. Cover frontend optimization techniques (e.g., asset compression, lazy loading) and backend optimizations (e.g., caching, query optimization).</p>
+                <h2>Behind the Scenes: Collaborative Workflow Between Frontend and Backend Teams</h2>
+                <p>- Describe how your frontend and backend teams collaborate seamlessly. Highlight methodologies such as Agile, version control, and code review that facilitate effective teamwork.</p>
+                <h2>Innovation at the Intersection: Frontend-Backend Integration for Cutting-Edge Features</h2>
+                <p>- Showcase instances where your team's synergy between frontend and backend development led to innovative features or functionalities, pushing the boundaries of user experience.</p>
+                <h2>Our Journey: Evolution in Frontend and Backend Development</h2>
+                <p>- Share the evolution of your team's approach to frontend and backend development. Discuss how you've adapted to new technologies, trends, and challenges over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="footer">
+            <div class="footer-text">
+                <h2 data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="900">Get in Touch</h2>
+                <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="900" class="gmail">johnmarkdepaclayon10@gmail.com</p>
+                <p data-aos="fade-up" data-aos-delay="20" data-aos-duration="900"><a href="privacy.html">Privacy Policy</a></p>
+                <div class="row">
+                    <a href="https://www.facebook.com/depaclayon.jm?mibextid=ZbWKwL"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://github.com/XKeisukeX"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square"></i></a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        const navMenu = document.querySelector('.nav-menu')
+        const hamburger = document.querySelector('.hamburger')
+
+        hamburger.addEventListener('click', mobileMenu);
+
+        function mobileMenu() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+    }
+
+    AOS.init();
+      </script>
+</body>
+</html>
